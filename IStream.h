@@ -6,10 +6,10 @@
 
 using namespace std;
 
-/* Массив валидаторов (глобально): */
+/* ћассив валидаторов (глобально): */
 IValide* valides[STREAMS_NUM] = { new ValideInt, new ValideDouble, new ValideBool, new ValideString, new ValideChar, new ValideArray };
 
-// Интерфейсный класс:
+// »нтерфейсный класс:
 class IStream
 {
 public:
@@ -24,7 +24,7 @@ private:
     const int YES = 1;
     const int NO = 2;
     string input_type = "int";  // вводимый пользователем тип данных
-    string value_str;  // ввод пользователя
+    string value_str;  // ввод пользовател€
     bool ignore_errors;  // продолжить ли выполнение программы при возникновении ошибки
 public:
 	// получить обрабатываемый тип данных
@@ -33,7 +33,7 @@ public:
         return this->input_type;
     }
 
-	// принять и обработать ввод пользователя:
+	// прин€ть и обработать ввод пользовател€:
     void read(bool ignore_errors) override
     {
         this->ignore_errors = ignore_errors;
@@ -43,7 +43,7 @@ public:
 
         try
         {
-			if (FILE_INPUT) {  // если ввод идёт из файла, то считать из файла...
+			if (FILE_INPUT) {  // если ввод идет из файла, то считать из файла...
 				ifstream input;  // объявить переменную-файл
 				input.open("input.txt");  // открыть конкретный файл (он должен быть создан)
 				
@@ -58,7 +58,7 @@ public:
 				
 				input.close();  // закрыть файл
 			} else {  // иначе - ввести данные с консоли...
-				getline(cin >> ws, value_str);  // принимаем от пользователя ввод...
+				getline(cin >> ws, value_str);  // принимаем от пользовател€ ввод...
 				if (int_string_contains_letters(value_str))  // в случае ошибки - выбрасываем исключение (сообщаем пользователю в консоль об ошибке)
 				{
 					throw std::invalid_argument("invalid argument");  // выбрасываем исключение
@@ -137,8 +137,8 @@ public:
         
         try
         {
-			if (FILE_INPUT) {  // если ввод идёт из файла, то считать из файла...
-				ifstream input;  // объявить переменную-файл
+			if (FILE_INPUT) {  // если ввод идет из файла, то считать из файла...
+				ifstream input;  // объ€вить переменную-файл
 				input.open("input.txt");  // открыть конкретный файл (он должен быть создан)
 				
 				/* Считать ПЕРВУЮ строку файла: */
